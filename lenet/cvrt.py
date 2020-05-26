@@ -9,7 +9,7 @@ bbuffer.write_float32.restypes = c_float
 
 class classifier(nn.Module):
 	pass
-C = torch.load("classifier.pkl")
+C = torch.load("classifier.pkl").cpu()
 
 def dump_parameters(state_dict, name, filepath, filename):
 	current_file = "%s/%s"%(filepath, filename)

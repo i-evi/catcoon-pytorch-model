@@ -80,7 +80,7 @@ for epoch in range(NEPOCH):
 		inputs, labels = data
 		inputs, labels = inputs.to(device), labels.to(device)
 		outputs = C(inputs)
-		onehot_labels = torch_make_onehot(10, labels)
+		onehot_labels = torch_make_onehot(10, labels).to(device)
 		loss = -torch.sum(onehot_labels * torch.log(outputs))
 		optimizer.zero_grad()
 		loss.backward()
